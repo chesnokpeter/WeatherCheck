@@ -70,11 +70,7 @@ def start_message(message):
 	bot.send_message(message.chat.id, "Этот бот создан для конкурса Sk Kids Challenge\nНад проектом работал:\n\n<chesnok/> 🧑🏻‍💻 — Разработка, тестирование\n(@chesnokpeter)\nАнтон 👾 — Наставник\n(https://vk.com/a_d_elec)")
 
 @bot.message_handler(content_types=['text'])
-def send_echo(message):
-	#if message.text == "fact":
-		#nummes1 = random.randint(0, 6)
-		#bot.send_message(message.chat.id, fact[nummes1])
-		
+def send_echo(message):		
 	try:
 		observation = mgr.weather_at_place(message.text)
 		w = observation.weather
@@ -105,10 +101,3 @@ def send_echo(message):
 		bot.send_message(message.chat.id, answer)
 
 bot.polling(none_stop=True, interval=0)
-
-#На всякий)
-#answer = "В городе " + message.text +" сейчас " + w.detailed_status + "\nТемпература сейчас: " + str("%.1f" % temp) + " по цельсию\n" + tips
-#markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-#btn1 = types.KeyboardButton("Интересный факт!")
-#markup.add(btn1)
-#bot.send_message(message.chat.id, text="Привет, друг!\nЧтобы узнать погоду, напиши @weatherchekker_bot\nИ вводи любой город России\nБот сам предложит тебе нужный город",reply_markup=markup)
