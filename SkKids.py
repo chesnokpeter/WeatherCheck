@@ -12,7 +12,7 @@ config_dict = get_default_config()
 config_dict["language"] = "RU"
 owm = OWM('a99967bc9ee70d5b4bd387902982f400')
 mgr = owm.weather_manager()
-bot = telebot.TeleBot("5707305838:AAE2OHw5EmcY_kHENwRWt8BVOzlivWtq4co")
+bot = telebot.TeleBot("-")
 
 fact = [
   "Атмосфера Земли имеет толщину 480 км и состоит из смеси около 16 газов",
